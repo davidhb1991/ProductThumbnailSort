@@ -1,0 +1,39 @@
+[{
+    "id":1,
+    "name":"Product Name",
+    "rating":5,
+    "location":"Product Venue/Location",
+    "price":"£1,000,000",
+    "image":"1-costa-adeje-gran-hotel.png",
+    "date":"4th March 2018",
+    "duration":"7 Days",
+    "from":"Leigh",
+    "people":"2 Adults",
+    "description":"Description for product 1"
+},
+{
+    "id":2,
+    "name":"Product Name",
+    "rating":2.5,
+    "location":"Product 2 Venue/Location",
+    "price":"£640,000",
+    "image":"product-image-1.png",
+    "date":"4th March 2018",
+    "duration":"7 Days",
+    "from":"Leigh",
+    "people":"2 Adults",
+    "description":"Description for product 2"
+},
+{
+    "id":3,
+    "name":"Product Name",
+    "rating":4,
+    "location":"Product 3 Venue/Location",
+    "price":"£43,000",
+    "image":"product-image-1.png",
+    "date":"4th March 2018",
+    "duration":"7 Days",
+    "from":"Leigh",
+    "people":"2 Adults",
+    "description":"Description for product 3"
+}]
