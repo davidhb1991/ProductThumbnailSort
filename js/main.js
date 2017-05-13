@@ -7,6 +7,6 @@ var app = angular.module('ProductThumbnailSort',[])
         $scope.products = response.data;
     });
 
-    console.log('Loaded the Main Controller ' + $scope);
+    console.log($scope);
  
 }]);

@@ -24,9 +24,13 @@
         <!-- Start of app/website -->
 
         <div class="app-container" ng-app="ProductThumbnailSort" ng-controller="MainCtrl" class="app-container">
+            <nav class="top-navbar">
+                <div class="top-navbar__brand">Logo</div>
+            </nav>
+            
             <div class="center-column">
 
-                <div class="product" ng-repeat="product in products">
+                <div class="product" ng-repeat="product in products" ng-cloak>
                     <div class="product__header">
                         <div class="product__header__info">
                             <h2><strong>{{ product.name }}</strong> <span class="stars"></span> </h2>
@@ -37,7 +41,7 @@
                             <h2><strong>£1,136.50</strong></h2>
                         </div>
                     </div>
-                    <img class="product__image" src=""/>
+                    <img class="product__image" src="products/img/{{ product.image }}"/>
                     <div class="product__footer">
                         <div class="product__footer__info">
                             <h3><strong>3 July 2014</strong> for
@@ -59,7 +63,7 @@
                            wejkefjkwef wewefewf jkwefjkefjnk feje jn ej nnfef jnefj jejnefjf jenjnefj ff 
                            wejkefjkwef wewefewf jkwefjkefjnk feje jn ej nnfef. 
                         </p>
-                        <button class="button product__description__button">BOOK NOW</button>
+                        <button class="button button--buy">BOOK NOW</button>
                     </div>
                 </div><!-- product -->
 
