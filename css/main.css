@@ -66,12 +66,18 @@ h3{}
 .hidden{}
 
 .button{}
-   .button--buy{
+    .button--sort-button{}
+    .button--active{}
+    .button--buy{
         margin:0 auto;
         display: block;
         width:200px;
         height:50px;
     }
+
+.filters{width:100%}
+.filters__sort-buttons{}
+.filters__search{}
 
 .product{
     background: transparent;

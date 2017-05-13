@@ -30,6 +30,17 @@
             
             <div class="center-column">
 
+                <nav class="filters">
+                    <div class="filters__search">
+                        <input type="textbox" placeholder="Search By Name"/>
+                    </div>
+                    <div class="filters__sort-buttons">
+                        <button class="button button--sort-button">sort alphabetically</button>
+                        <button class="button button--sort-button">sort by price</button>
+                        <button class="button button--sort-button button--active">sort by star rating</button>
+                    </div>
+                </nav>
+
                 <div class="product" ng-repeat="product in products" ng-cloak>
                     <div class="product__header">
                         <div class="product__header__info">
