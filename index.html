@@ -23,13 +23,13 @@
 
         <!-- Start of app/website -->
 
-        <div class="app-container">
+        <div class="app-container" ng-app="ProductThumbnailSort" ng-controller="MainCtrl" class="app-container">
             <div class="center-column">
 
-                <div class="product">
+                <div class="product" ng-repeat="product in products">
                     <div class="product__header">
                         <div class="product__header__info">
-                            <h2><strong>Costa Adeje Gran Hotel</strong> <span class="stars"></span> </h2>
+                            <h2><strong>{{ product.name }}</strong> <span class="stars"></span> </h2>
                             <p>Costa Adeje, Tenerife</p>
                         </div>
                         <div class="product__header__price">
