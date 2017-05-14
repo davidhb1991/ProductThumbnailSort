@@ -32,16 +32,16 @@
 
                 <nav class="filters">
                     <div class="filters__search">
-                        <input type="textbox" placeholder="Search By Name"/>
+                        <input type="textbox" ng-model="search" placeholder="Search Holidays"/>
                     </div>
                     <div class="filters__sort-buttons">
-                        <button class="button button--sort-button">sort alphabetically</button>
-                        <button class="button button--sort-button">sort by price</button>
-                        <button class="button button--sort-button button--active">sort by star rating</button>
+                        <button ng-click="orderByMe('name')" class="button button--sort-button">sort alphabetically</button>
+                        <button ng-click="orderByMe('price')" class="button button--sort-button">sort by price</button>
+                        <button ng-click="orderByMe('rating')" class="button button--sort-button button--active">sort by star rating</button>
                     </div>
                 </nav>
 
-                <div class="product" ng-repeat="product in products" ng-cloak>
+                <div class="product" ng-repeat="product in products | orderBy:myOrderBy | filter : search" ng-cloak>
                     <div class="product__header">
                         <div class="product__header__info">
                             <h2><strong>{{ product.name }}</strong> <span class="stars"></span> </h2>
@@ -49,7 +49,7 @@
                         </div>
                         <div class="product__header__price">
                             <p><strong>holiday price</strong></p>
-                            <h2><strong>£1,136.50</strong></h2>
+                            <h2><strong>{{ product.price | currency }}</strong></h2>
                         </div>
                     </div>
                     <img class="product__image" src="products/img/{{ product.image }}"/>
