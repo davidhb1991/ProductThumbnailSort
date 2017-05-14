@@ -30,7 +30,7 @@ var app = angular.module('ProductThumbnailSort',['ngAnimate'])
 
 // study below
 
-angular.module('StackApp', []).controller('MainCtrl', function($scope) {
+angular.module('StackApp', []).controller('MainCtrl2', function($scope) {
   'use strict';
 
   $scope.reverse = 'false';
@@ -58,7 +58,7 @@ angular.module('StackApp', []).controller('MainCtrl', function($scope) {
   $scope.$watch('reverse', function() {
     $scope.setOrder();
   });
-
+//
   $scope.setOrder = function() {
 
     if ($scope.reverse === 'random') {
