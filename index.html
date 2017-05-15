@@ -15,7 +15,8 @@
         <link rel="stylesheet" href="css/bootstrap.min.css"> -->
         <link rel="stylesheet" href="css/main.css">
         <!-- link to Google Font: Open Sans -->
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+        <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css"> 
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
     <body>
@@ -26,8 +27,8 @@
         <!-- Start of app/website -->
 
         <nav class="top-navbar">
-                <div class="top-navbar__brand">Logo</div>
-            </nav>
+            <img class="top-navbar__brand" src="img/logo.png"/>
+        </nav>
 
         <div class="app-container" ng-app="ProductThumbnailSort" ng-controller="MainCtrl" class="app-container">
             
@@ -36,6 +37,7 @@
 
                 <nav class="filters">
                     <div class="filters__search">
+                        <i class="fa fa-search" aria-hidden="true"></i>
                         <input type="textbox" ng-model="search" placeholder="Search Holidays"/>
                     </div>
                     <div class="filters__sort-buttons">
