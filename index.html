@@ -14,6 +14,8 @@
        <!-- <link rel="stylesheet" href="css/boilerplate.css">
         <link rel="stylesheet" href="css/bootstrap.min.css"> -->
         <link rel="stylesheet" href="css/main.css">
+        <!-- link to Google Font: Open Sans -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet"> 
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
     <body>
@@ -23,54 +25,30 @@
 
         <!-- Start of app/website -->
 
-        <div class="app-container" ng-app="ProductThumbnailSort" ng-controller="MainCtrl" class="app-container">
-            <nav class="top-navbar">
+        <nav class="top-navbar">
                 <div class="top-navbar__brand">Logo</div>
             </nav>
+
+        <div class="app-container" ng-app="ProductThumbnailSort" ng-controller="MainCtrl" class="app-container">
+            
             
             <div class="center-column">
-
-                <svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://web.resource.org/cc/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" version="1.0" width="535" height="110" id="svg2" sodipodi:version="0.32" inkscape:version="0.44" sodipodi:docname="5.svg" sodipodi:docbase="G:\svg\stars">
-  <metadata id="metadata20">
-    <rdf:RDF>
-      <cc:Work rdf:about="">
-        <dc:format>image/svg+xml</dc:format>
-        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-      </cc:Work>
-    </rdf:RDF>
-  </metadata>
-  <sodipodi:namedview inkscape:window-height="569" inkscape:window-width="853" inkscape:pageshadow="2" inkscape:pageopacity="0.0" guidetolerance="10.0" gridtolerance="10.0" objecttolerance="10.0" borderopacity="1.0" bordercolor="#666666" pagecolor="#ffffff" id="base" inkscape:zoom="1.4672897" inkscape:cx="267.5" inkscape:cy="55" inkscape:window-x="44" inkscape:window-y="58" inkscape:current-layer="svg2"/>
-  <defs id="defs4">
-    <linearGradient id="linearGradient2762">
-      <stop style="stop-color:#fc0;stop-opacity:1" offset="0" id="stop2764"/>
-      <stop style="stop-color:#ff6e00;stop-opacity:1" offset="1" id="stop2766"/>
-    </linearGradient>
-    <radialGradient cx="80" cy="242.58746" r="97.352219" fx="80" fy="242.58746" id="radialGradient4610" xlink:href="#linearGradient2762" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1,0,0,0.951057,0,11.87307)"/>
-    <radialGradient inkscape:collect="always" xlink:href="#linearGradient2762" id="radialGradient1890" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1,0,0,0.951057,0,11.87307)" cx="80" cy="242.58746" fx="80" fy="242.58746" r="97.352219"/>
-    <radialGradient inkscape:collect="always" xlink:href="#linearGradient2762" id="radialGradient1897" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0.54003,0,0,0.513599,13.68591,-69.5927)" cx="80" cy="242.58746" fx="80" fy="242.58746" r="97.352219"/>
-  </defs>
-  <path d="M 56.888312,4.99999 L 69.297481,43.198877 L 109.46143,43.196598 L 76.966771,66.802524 L 89.380284,105.00001 L 56.88831,81.390382 L 24.396334,105.00001 L 36.809848,66.80253 L 4.3151906,43.196598 L 44.479138,43.198877 L 56.888312,4.99999 z " style="fill:url(#radialGradient1897);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:10;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" id="path1874"/>
-  <use transform="translate(105.3058,0)" id="use4643" x="0" y="0" width="535" height="110" xlink:href="#path1874"/>
-  <use transform="translate(210.6117,0)" id="use4645" x="0" y="0" width="535" height="110" xlink:href="#path1874"/>
-  <use transform="translate(315.9175,0)" id="use4647" x="0" y="0" width="535" height="110" xlink:href="#path1874"/>
-  <use transform="translate(421.2234,0)" id="use4650" x="0" y="0" width="535" height="110" xlink:href="#path1874"/>
-</svg>
 
                 <nav class="filters">
                     <div class="filters__search">
                         <input type="textbox" ng-model="search" placeholder="Search Holidays"/>
                     </div>
                     <div class="filters__sort-buttons">
-                        <button ng-click="orderByMe('name')" class="button button--sort-button">sort alphabetically</button>
-                        <button ng-click="orderByMe('price')" class="button button--sort-button">sort by price</button>
-                        <button ng-click="orderByMe('rating')" class="button button--sort-button button--active">sort by star rating</button>
+                        <button ng-click="orderByMe('name')" class="button button--sort-button">sort <strong>alphabetically</strong></button>
+                        <button ng-click="orderByMe('price')" class="button button--sort-button">sort by <strong>price</strong></button>
+                        <button ng-click="orderByMe('rating')" class="button button--sort-button button--active">sort by <strong>star rating</strong></button>
                     </div>
                 </nav>
 
                 <div class="product" ng-repeat="product in products | orderBy:myOrderBy | filter : search" ng-cloak>
                     <div class="product__header">
                         <div class="product__header__info">
-                            <h2><strong>{{ product.name }}</strong> <span class="stars" data-rating=" {{ product.rating }} ">{{ product.rating }}</span> </h2>
+                            <h2><strong>{{ product.name }}</strong> <span class="product__header__info__stars" ng-repeat="rating in product.rating">&#9733;</span> </h2>
                             <p>Costa Adeje, Tenerife</p>
                         </div>
                         <div class="product__header__price">
@@ -79,7 +57,7 @@
                         </div>
                     </div>
                     <img class="product__image" src="products/img/{{ product.image }}"/>
-                    <div class="product__footer">
+                    <div class="product__footer" ng-click="show=(show) ? false : true">
                         <div class="product__footer__info">
                             <h3><strong>3 July 2014</strong> for
                                 <strong>7 days</strong> from
@@ -87,12 +65,12 @@
                                 <strong>2 children & 1 infant</strong>
                             </h3>
                         </div>
-                        <div class="product__footer__chevron">
-                          <div>></div>
+                        <div class="product__footer__chevron" ng-class="{'product__footer__chevron--rotated':show}">
+                          <div>&#8250;</div>
                         </div>
                     </div>
                     
-                    <div class="product__description hidden">
+                    <div class="product__description" ng-class="{'product__description--show':show}">
                         <p>
                             wejkefjkwef wewefewf jkwefjkefjnk feje jn ej nnfef jnefj jejnefjf jenjnefj ff 
                            wejkefjkwef wewefewf jkwefjkefjnk feje jn ej nnfef jnefj jejnefjf jenjnefj ff 
@@ -106,37 +84,6 @@
 
             </div><!-- center-column -->
         </div><!-- app-container -->
-
-<!-- style="display:none" -->
-<div ng-app="StackApp" >
-  <div ng-controller="MainCtrl2">
-    <h1>Animate Order</h1>
-    <form action="">
-      <label for="reverse">reverse = true</label>
-      <br>
-      <input type="radio" value="true" name="reverse" ng-model="reverse">
-      <br>
-      <br>
-      <label for="reverse">reverse = false</label>
-      <br>
-      <input type="radio" value="false" name="reverse" ng-model="reverse">
-      <br>
-      <br>
-      <label for="reverse">reverse = random (click button below to shuffle again)</label>
-      <br>
-      <input type="radio" value="random" name="reverse" ng-model="reverse">
-    </form>
-    <br>
-    <br>
-    <input type="button" ng-click="reverse = 'random';setOrder()" value="setOrder()">
-    <br>
-    <br>
-    <ul id="list" ng-style="{height: ((myList.length * 40) + 'px')}">
-      <li ng-repeat="item in myList" ng-style="{top: ((item.order * 40) + 'px')}">{{$index}} - {{item.order}}. {{item.text}}</li>
-    </ul>
-  </div>
-</div>
-
 
         <!-- End of app/website -->
         <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>

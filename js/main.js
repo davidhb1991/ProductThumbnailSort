@@ -19,71 +19,44 @@ var app = angular.module('ProductThumbnailSort',['ngAnimate'])
         $('.button--sort-button').removeClass('button--active');
         $(this).addClass('button--active');
     });
-
-    console.log('Loaded MainCtrl');
+  
  
 }]);
 
+   
 
 
 
+/*
+// ordering the list without removing elements and adding them back in so it can be animated.
+// HTML
 
-// study below
+ <input type="button" 
+ ng-click="reverse = 'random';setOrder()"
+  value="setOrder()">
+   
+    <ul id="list" 
+    ng-style="{height: ((myList.length * 40) + 'px')}">
 
-angular.module('StackApp', []).controller('MainCtrl2', function($scope) {
-  'use strict';
+      <li ng-repeat="item in myList" 
+      ng-style="{top: ((item.order * 40) + 'px')}">
 
-  $scope.reverse = 'false';
+      {{$index}} - {{item.order}}. {{item.text}}
 
-  $scope.myList = [{
-    id: 0,
-    text: 'HTML5 Boilerplate'
-  }, {
-    id: 1,
-    text: 'AngularJS'
-  }, {
-    id: 2,
-    text: 'Karma'
-  }, {
-    id: 3,
-    text: 'Hello'
-  }, {
-    id: 4,
-    text: 'World'
-  }, {
-    id: 5,
-    text: 'How'
-  }];
+      </li>
+    
+    </ul>
 
-  $scope.$watch('reverse', function() {
+// JS
+
+  $scope.$watch('DOMObjectThatWillChange', function() {
     $scope.setOrder();
   });
 //
   $scope.setOrder = function() {
-
-    if ($scope.reverse === 'random') {
-
-      var t = [];
-
-      for (var i = 0; i < $scope.myList.length; i++) {
-        var r = Math.floor(Math.random() * $scope.myList.length);
-        while (inArray(t, r)) {
-          r = Math.floor(Math.random() * $scope.myList.length);
-        }
-        t.push(r);
-        $scope.myList[i].order = r;
-      }
-
-    } else {
-
-      for (var i = 0; i < $scope.myList.length; i++) {
-        if ($scope.reverse === 'false') {
-          $scope.myList[i].order = i;
-        } else {
+      for (var i = 0; i < $scope.myList.length; i++) {     
           $scope.myList[i].order = ($scope.myList.length - 1 - i);
-        }
       }
-    }
   };
 
   function inArray(a, value) {
@@ -94,6 +67,6 @@ angular.module('StackApp', []).controller('MainCtrl2', function($scope) {
     }
     return false;
   }
+*/
 
-});
 

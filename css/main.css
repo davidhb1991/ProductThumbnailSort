@@ -29,6 +29,7 @@ body{
     background-size: 200%;
     background-attachment: fixed;
     background-repeat: repeat-x;
+    font-family: 'Open Sans', sans-serif;
     /*background-position-y: 100px;*/
 }
 .top-navbar{
@@ -58,6 +59,10 @@ body{
     margin: 0 auto;/*for IE*/
 }
 
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 p,h2,h3{margin:0 10px;}
 p{}
 h2{}
@@ -65,49 +70,97 @@ h3{}
 
 .hidden{}
 
-.button{}
-    .button--sort-button{}
-    .button--active{}
+.button{
+        border: none;
+        cursor: pointer;
+        box-shadow: rgba(0,0,0,0.5) 0px 2px 1px;
+        }
+    .button--sort-button{
+        width: 30%;
+        background: rgba(255,255,255,0.5);
+        padding: 20px 0;
+        color: rgb(0,174,225)
+    }
+    .button--active{
+        background: rgb(0,174,225);
+        color:white;
+        }
     .button--buy{
-        margin:0 auto;
+        margin: 0 auto;
         display: block;
-        width:200px;
-        height:50px;
+        width: 150px;
+        height: 45px;
+        background: rgb(25,56,138);
+        color: white;
+        z-index: 1000000;
+        border-radius: 3px;
+        font-weight: bold;
+        font-size: 19px;
     }
 
 .filters{width:100%}
-.filters__sort-buttons{}
-.filters__search{}
+.filters__sort-buttons{
+    display: flex;
+    justify-content: space-between;
+}
+.filters__search{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    background: rgb(0,174,225);
+    height:80px;
+    margin:20px 0 0 0;
+    padding:20px 0 0 20px;
+    }
+    .filters__search input{
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        box-shadow: rgba(0,0,0,0.5) 0px 2px 1px;
+        border: none;
+        width: 60%;
+        height: 50px;
+        border-radius: 5px;
+        background: rgba(255,255,255,0.5);
+        margin: 0 0 20px 0;
+        padding: 0 25px;
+        color: blue;
+        font-size: 30px;
+
+    }
 
 .product{
     background: transparent;
     margin: 30px 0 0 0;
     box-shadow: rgba(0,0,0,.5) 0px 2px 2px;
     -webkit-box-shadow: rgba(0,0,0,.5) 0px 2px 2px;
-    transition: all linear 0.5s;
-    -webkit-transition: all linear 0.5s;
-    -moz-transition: all linear 0.5s;
-    -o-transition: all linear 0.5s;
+    transition: all linear 0.3s;
+    -webkit-transition: all linear 0.3s;
+    -moz-transition: all linear 0.3s;
+    -o-transition: all linear 0.3s;
 }
     .product__header{
         background: lightsteelblue;
         background:rgba(255,255,255,0.7);
         display: inline-block;
         width: 100%;
-        color:blue;
+        color:rgb(25,56,138);;
         }
         .product__header__info{
             width:60%;
             float:left;
             padding:10px 0;
         }
+            .product__header__info__stars{
+                color: rgb(242,211,48);
+            }
         .product__header__price{
             width: 24%;
             float: right;
             text-align: right;
             padding: 10px 0;
-            border-left: 3px solid blue;
-            background:yellow;
+            border-left: 3px solid rgb(25,56,138);
+            background: rgb(242,211,48);
         }
     .product__image{
         height:300px;
@@ -117,8 +170,9 @@ h3{}
     .product__footer{
         padding:10px;
         vertical-align: center;
-        background: skyblue;
+        background: rgb(0,174,225);
         color:white;
+        cursor: pointer;
         }
         .product__footer__info{
             width:89%;
@@ -128,46 +182,68 @@ h3{}
             width:10%;
             display:inline-block;
             text-align:center;
-            font-size:50px;
+            font-size:90px;
+            line-height: 0.2;
             vertical-align: middle;
+             transition: all linear 0.3s;
+            -webkit-transition: all linear 0.3s;
+            -moz-transition: all linear 0.3s;
+            -o-transition: all linear 0.3s;
         }
+            .product__footer__chevron--rotated{
+                transform: rotate(90deg);
+                -webkit-transform: rotate(90deg);
+                -moz-transform: rotate(90deg);
+                -o-transform: rotate(90deg);
+            }
             .product__footer__chevron div{
                 position: relative;
                 height:50px;
             }
     .product__description{
         width:100%;
+        height:200px;
         display: block;
         background: white;
-        color: skyblue;
+        color: rgb(0,174,225);
+        padding: 15px 0;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        position: relative;
+        margin-top: -200px;
+        transition: all linear 0.5s;
+        -webkit-transition: all linear 0.5s;
+        -moz-transition: all linear 0.5s;
+        -o-transition: all linear 0.5s;
+        z-index:-1;
     }
+        .product__description--show{
+             margin-top: 0;
+        }
         .product__description p{
             margin: 0 20px 20px 20px;
         }
 
 
-/* Clip path of a star */
--webkit-clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-
-.clip-svg {
-  clip-path: url(#metadata20);
-}
+/*
 
 #list {
-  /* Needed, otherwise items would be at top of the page (see below) */
+  /* Needed, otherwise items would be at top of the page (see below) 
   position: absolute;
-  /* full width, or it would look strange */
+  /* full width, or it would look strange 
   width: 100%;
 }
 #list li {
   position: absolute;
-  /* Top: 0; this will be changed for every single list item by AngularJS */
+  /* Top: 0; this will be changed for every single list item by AngularJS 
   top: 0;
-  /* Item height; hold this in sync with template file */
+  /* Item height; hold this in sync with template file 
   height: 40px;
-  /*  Simple transition */
+  /*  Simple transition 
   -webkit-transition: top 0.5s ease-in-out;
   -moz-transition: top 0.5s ease-in-out;
   transition: top 0.5s ease-in-out;
 }
+
+*/
